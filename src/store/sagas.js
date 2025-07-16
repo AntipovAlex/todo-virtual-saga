@@ -14,6 +14,11 @@ function* loadTodosSaga() {
   yield put(loadTodosSuccess(data));
 }
 
+// function* loadTodosSaga() {
+//   const data = yield call(() => import('../data/todos.json'));
+//   yield put(loadTodosSuccess(data.default));
+// }
+
 export default function* rootSaga() {
   yield takeLatest("LOAD_TODOS_REQUEST", loadTodosSaga);
 }
